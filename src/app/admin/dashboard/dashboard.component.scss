@@ -1,0 +1,13 @@
+mat-card{
+    margin-top: 10px;
+}
+button{
+    margin-left: 10px;
+    border-style: outset;
+    background-color: #f0f1f0;
+}
+button:hover{
+    border-style: inset;
+    background-color: lightgray;
+    box-shadow: 0 10px 12px 0 rgba(0,0,0,0.14),0 17px 50px 0 rgba(0,0,0,0.10);
+}

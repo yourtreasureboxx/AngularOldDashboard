@@ -1,0 +1,55 @@
+<mat-card class="card">
+
+    <mat-card-title> 
+        <h2>Total users count
+            <span class="totaluser">{{users.length}}</span>
+        </h2>
+    </mat-card-title>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="userName">
+        <th mat-header-cell *matHeaderCellDef> UserName</th>
+        <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-expansion-panel fxFlex="65%">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Actions
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <button class="success" mat-button>View</button>
+            <button class="primary" mat-button>Edit</button>
+            <button class="danger" mat-button>Delete</button>
+          </mat-expansion-panel>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="allColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: allColumns;"></tr>
+    </table>
+    
+    <mat-paginator [length]="users.length" #paginator [pageSizeOptions]="[5, 10]"
+    showFirstLastButtons>
+    </mat-paginator>
+
+  </mat-card>

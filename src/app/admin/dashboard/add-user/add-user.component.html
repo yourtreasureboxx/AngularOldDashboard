@@ -1,0 +1,65 @@
+<mat-card class="card">
+  <mat-card-title>
+    <h2><span>Add New User</span>
+    </h2>
+</mat-card-title>
+  <form class="myform" (ngSubmit)="onSubmit()" #f="ngForm">
+      <mat-form-field appearance="outline" class="full-width" id="user-data"
+      ngModelGroup="userData"
+      #userData="ngModelGroup">
+        <mat-label>Email</mat-label>
+        <input type="email"
+        id="email"
+        matInput
+        placeholder="Ex. name@any.com"
+        ngModel
+        class="form-control"
+        name="email"
+        required
+        email>
+        <mat-icon matSuffix>mail</mat-icon>
+        <mat-error *ngIf="!userData.valid && userData.dirty">Please enter a valid email address</mat-error>
+        <mat-error *ngIf="userData.touched && !userData.dirty ">Email field is required</mat-error>
+      </mat-form-field>
+
+      <table class="full-width" cellspacing="0"><tr>
+          <td><mat-form-field appearance="outline" class="full-width">
+            <mat-label>First Name</mat-label>
+            <input
+            matInput
+            id="fname"
+            ngModel
+            name="fname">
+          </mat-form-field></td>&nbsp;
+          <td><mat-form-field appearance="outline" class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input
+            matInput
+            id="lname"
+            ngModel
+            name="lname">
+          </mat-form-field></td>
+        </tr>
+      </table>
+
+      <p>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Address</mat-label>
+          <textarea
+          matInput
+          placeholder="Ex. Mumbai"
+          id="address"
+          ngModel
+          name="address">
+        </textarea>
+          <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-form-field>
+      </p>
+
+      <mat-card-actions align="end">
+        <button mat-button class="btn-success" type="submit"><mat-icon matSuffix>person_add</mat-icon> Add</button>
+        <button mat-button class="btn-danger" type="button" (click)="onClear()"><mat-icon matSuffix>clear</mat-icon> Clear</button>
+      </mat-card-actions>
+
+  </form>
+</mat-card>

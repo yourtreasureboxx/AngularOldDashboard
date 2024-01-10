@@ -1,0 +1,19 @@
+.card{
+    background-color:#F0F1F0;
+    padding: 15px;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+button{
+    margin: 5px;
+    border-radius: 8px;
+}
+button.success{
+    background-color: green;
+}
+button.primary{
+    background-color: rgb(71, 97, 247);
+}
+button.danger{
+    background-color: red;
+}
